@@ -19,8 +19,9 @@ TypeScript React "why-did-you-render" Demo
   1. 用`React.memo`包装一下
   2. 给它设置`MyComponent.whyDidYouRender = true`
 5. `import './wdyr'`要放在入口文件的第一行
-6. 如果我们是通过`import './wdyr'`来使用，而不是直接在webpack里直接插入最前，可以不写
-  `/// <reference types="@welldone-software/why-did-you-render" />`
+6. `/// <reference types="@welldone-software/why-did-you-render" />` 要写在文件的第一行。
+   它的一个作用是给组件在类型上增加`whyDidYouRender`属性，所以我们可以写成`MyComponent.whyDidYouRender = true`，
+   而不是 `(MyComponent as any).whyDidYouRender = true`
 
 ```
 npm install
